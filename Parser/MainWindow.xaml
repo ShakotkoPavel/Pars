@@ -6,14 +6,18 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:Parser"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="370" Background="DarkSlateGray">
-    <Grid Margin="0,0,2,0">
-        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="320" VerticalAlignment="Top" Width="238"/>
-        <Button x:Name="buttonStart" Content="Start" HorizontalAlignment="Left" Margin="243,90,0,0" VerticalAlignment="Top" Width="117" Click="buttonStart_Click"/>
-        <Button x:Name="buttonAbort" Content="Abort" HorizontalAlignment="Left" Margin="243,117,0,0" VerticalAlignment="Top" Width="117" Click="buttonAbort_Click"/>
-        <xctk:IntegerUpDown Name="myUpDownControl1" Margin="280,10,0,290" DefaultValue="0" Height="20"/>
-        <xctk:IntegerUpDown Name="myUpDownControl2" Margin="280,40,0,260" DefaultValue="1" Height="20" />
-        <Label x:Name="labelStart" Content="Start" HorizontalAlignment="Left" Margin="243,10,0,0" VerticalAlignment="Top" Height="20" Width="32" Padding="0"/>
-        <Label x:Name="labelEnd" Content="End" HorizontalAlignment="Left" Margin="243,40,0,0" VerticalAlignment="Top" Height="20" Width="32" Padding="0"/>
+        Title="Parser" Height="350" Width="300" Background="DarkSlateGray">
+    <Grid Margin="0,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="listBox" Margin="0,45,0,0" Grid.ColumnSpan="2"/>
+        <Label x:Name="labelStart" Content="Start page:" HorizontalAlignment="Left" Height="19" Margin="2,2,0,0" VerticalAlignment="Top" Width="62" Padding="0"/>
+        <Label x:Name="labelEnd" Content="End page:" HorizontalAlignment="Left" Height="19" Margin="2,23,0,0" VerticalAlignment="Top" Width="62" Padding="0"/>
+        <xctk:IntegerUpDown x:Name="startPage" Margin="65,2,24,0" Height="19" VerticalAlignment="Top"/>
+        <xctk:IntegerUpDown x:Name="endPage" Margin="65,23,24,0" Height="19" VerticalAlignment="Top"/>
+        <Button x:Name="buttonStart" Content="Start" Margin="26,2,10,0" VerticalAlignment="Top" Height="19" Padding="0" Click="buttonStart_Click" Grid.Column="1"/>
+        <Button x:Name="buttonEnd" Content="Abort" Margin="26,23,10,0" VerticalAlignment="Top" Height="19" Padding="0" Click="buttonAbort_Click" Grid.Column="1"/>
     </Grid>
 </Window>
